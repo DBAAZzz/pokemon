@@ -1,0 +1,11 @@
+<view class="body">
+  <view class="list-box">
+    <view class="pokemon-item" wx:for="{{list}}">
+      <image class="pokemon-item-pic" src="https://www.pokemon.cn/play/resources/pokedex/{{item.file_name}}" />
+      <view  class="pokemon-item-info">
+        <span class="no">编号：{{item.zukan_id}}</span>
+        <span class="name">{{item.pokemon_name}}</span>
+      </view>
+    </view>
+  </view>
+</view>

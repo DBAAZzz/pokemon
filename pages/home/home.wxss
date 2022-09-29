@@ -1,0 +1,31 @@
+.body {
+  display: block;
+  min-height: 100vh;
+  background-color: aquamarine;
+}
+
+.pokemon-item {
+  display: flex;
+  background: red;
+  padding: 8rpx 16rpx;
+}
+
+.pokemon-item .pokemon-item-pic {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 16rpx;
+}
+
+.pokemon-item .pokemon-item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.pokemon-item-info .no {
+  font-size: 28rpx;
+}
+
+.pokemon-item-info .name {
+  font-size: 30rpx;
+}
