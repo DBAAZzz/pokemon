@@ -1,4 +1,32 @@
-<view class="body">
+<wxs module="util">
+  var typeMap = {
+    "火": "hot",
+    "草": "grass",
+    "毒": "poison",
+    "飞行": "fly",
+    "水": "water",
+    "龙": "dragon",
+    "虫": "insect",
+    "一般": "common",
+    "恶": "evil",
+    "电": "light",
+    "冰": "ice",
+    "钢": "steel",
+    "妖精": "spirit",
+    "岩石": "rock",
+    "地面": "ground",
+    "格斗": "combat",
+    "超能力": "superpowers"
+  }
+  var getClassName = function(type) {
+    return typeMap[type]
+  }
+  module.exports = {
+    getClassName : getClassName,
+  }
+</wxs>
+
+<view class="body {{util.getClassName(pokemonDetail.type1)}}">
   <view class="pokemon-detail" >
     <view class="detail-basic">
       <view class="pokemon-animate">
@@ -8,7 +36,6 @@
         <p class="name">名称：<span class="content">{{pokemonDetail.nameZh}}</span></p>
         <p class="height">身高：<span class="content">{{pokemonDetail.detail.height}}</span></p>
         <p class="weight">体重：<span class="content">{{pokemonDetail.detail.weight}}</span></p>
-        <p class="character">特性：<span class="content">{{pokemonDetail.ability1}}{{pokemonDetail.ability2}}</span></p>
         <p class="character">捕获率：<span class="content">{{pokemonDetail.detail.catchRate}}</span></p>
         <p class="character">性别比：<span class="content">{{pokemonDetail.detail.genderRatio}}</span></p>
       </view>
@@ -17,27 +44,27 @@
       <view class="stock-title" >种族值 {{pokemonDetail.baseStat.total}}</view>
       <view class="stock-box" >
         <view class="stock-item">
-          <view class="stock-item-value" style="height:{{pokemonDetail.baseStat.hp / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-hp" style="height:{{pokemonDetail.baseStat.hp / 255 * 300}}rpx;"></view>
           <view class="stock-item-label">HP</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value" style="height:{{pokemonDetail.baseStat.attack / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-attack" style="height:{{pokemonDetail.baseStat.attack / 255 * 300}}rpx;"></view>
           <view class="stock-item-label">攻击</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value" style="height:{{pokemonDetail.baseStat.defense / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-defense" style="height:{{pokemonDetail.baseStat.defense / 255 * 300}}rpx;"></view>
           <view class="stock-item-label">防御</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value" style="height:{{pokemonDetail.baseStat.spAttack / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-spAttack" style="height:{{pokemonDetail.baseStat.spAttack / 255 * 300}}rpx;"></view>
           <view class="stock-item-label">特攻</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value" style="height:{{pokemonDetail.baseStat.spDefense / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-spDefense" style="height:{{pokemonDetail.baseStat.spDefense / 255 * 300}}rpx;"></view>
           <view class="stock-item-label">特防</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value" style="height:{{pokemonDetail.baseStat.speed / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-speed" style="height:{{pokemonDetail.baseStat.speed / 255 * 300}}rpx;"></view>
           <view class="stock-item-label">速度</view>
         </view>
       </view>
