@@ -1,0 +1,1 @@
+<image id="image-{{id}}" class="image" mode="widthFix" src="{{realSrc}}"></image>

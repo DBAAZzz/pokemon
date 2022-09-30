@@ -1,0 +1,28 @@
+<wxs module="util">
+  var typeMap = {
+    "火": "hot",
+    "草": "grass",
+    "毒": "poison",
+    "飞行": "fly",
+    "水": "water",
+    "龙": "dragon",
+    "虫": "insect",
+    "一般": "common",
+    "恶": "evil",
+    "电": "light",
+    "冰": "ice",
+    "钢": "steel",
+    "妖精": "spirit",
+    "岩石": "rock",
+    "地面": "ground",
+    "格斗": "combat",
+    "超能力": "superpowers"
+  }
+  var getClassName = function(type) {
+    return typeMap[type]
+  }
+  module.exports = {
+    getClassName : getClassName,
+  }
+</wxs>
+<view class="pokemon-type {{util.getClassName(typeName)}}">{{typeName}}</view>

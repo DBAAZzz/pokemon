@@ -1,11 +1,22 @@
-<view class="body">
+<scroll-view scroll-y="true" class="body" bindscrolltolower="onScrollBottom" wx:if="{{!loading}}">
   <view class="list-box">
-    <view class="pokemon-item" wx:for="{{list}}">
-      <image class="pokemon-item-pic" src="https://www.pokemon.cn/play/resources/pokedex/{{item.file_name}}" />
-      <view  class="pokemon-item-info">
-        <span class="no">编号：{{item.zukan_id}}</span>
-        <span class="name">{{item.pokemon_name}}</span>
+    <view class="pokemon-item" wx:for="{{renderList}}" wx:key="index" data-name="{{item.nameZh}}" bindtap="navToDetail">
+      <lazyImage class="pokemon-item-pic" src="{{item.imgUrl}}"></lazyImage>
+      <view class="pokemon-item-info">
+        <span class="no">编号：{{item.no}}</span>
+        <p class="name">{{item.nameZh}}
+          <span class="sub-name">({{item.nameJa}})</span>
+        </p>
+        <view class="pokemon-item-type">
+          <pokemonType typeName="{{item.type1}}" ></pokemonType>
+          <pokemonType wx:if="{{item.type2}}" typeName="{{item.type2}}" ></pokemonType>
+        </view>
       </view>
+      
     </view>
   </view>
+</scroll-view>
+
+<view class="wrap" wx:else>
+  <image class="loading" src="../../assets/images/loading.gif" />
 </view>

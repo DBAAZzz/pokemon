@@ -1,31 +1,75 @@
 .body {
   display: block;
-  min-height: 100vh;
-  background-color: aquamarine;
+  height: 100vh;
+  background-image: url(http://175.178.74.222:9001/images/bg.jpg);
+  background-size: 100% 1017rpx;
+  background-position: top 80rpx left 0;
+  background-repeat: no-repeat;
+  overflow: auto;
 }
 
 .pokemon-item {
+  position: relative;
   display: flex;
-  background: red;
   padding: 8rpx 16rpx;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 2rpx solid #e4e4e4;
 }
 
 .pokemon-item .pokemon-item-pic {
   display: block;
-  width: 100rpx;
-  height: 100rpx;
+  width: 160rpx;
+  height: 160rpx;
   margin-right: 16rpx;
 }
 
 .pokemon-item .pokemon-item-info {
+  position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   flex: 1;
 }
+
 .pokemon-item-info .no {
   font-size: 28rpx;
+  font-weight: bold;
 }
 
 .pokemon-item-info .name {
+  display: inline-block;
+  margin-top: 6rpx;
   font-size: 30rpx;
+}
+
+.pokemon-item-info .sub-name {
+  display: inline-block;
+  margin-top: 6rpx;
+  font-size: 20rpx;
+}
+
+.pokemon-item .pokemon-item-type {
+  position: absolute;
+  right: 16rpx;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.wrap {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 228, 122, 0.6);
+}
+
+.wrap .loading {
+  display: block;
+  width: 200rpx;
+  height: 96rpx;
 }

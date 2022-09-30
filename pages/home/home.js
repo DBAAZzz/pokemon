@@ -1,4 +1,5 @@
 import { get } from "../../utils/request"
+import { pokemonImg } from "../../assets/json/pokemon"
 
 Page({
 
@@ -6,14 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    loading: true,
+    renderList: []
   },
+  pageSize: 1,
+  list: [],
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getPokemonList()
+    this.getPokemonList(true)
   },
 
   /**
@@ -54,24 +58,45 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {
-
+  onScrollBottom() {
+    if(this.data.renderList.length < 897) {
+      this.pageSize++
+      this.loadMore()
+    }
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    
   },
 
-  async getPokemonList() {
-    let data = await get("https://www.pokemon.cn/play/pokedex/api/v1", {
-      "zukan_id_from": 1,
-      "zukan_id_to": 898
+  async getPokemonList(first = false) {
+    let { data } = await get("https://pokemon.fantasticmao.cn/pokemon/list")
+    data = data.map((item) => {
+      item.no = item.index < 99 ? ((item.index < 10) ? `00${item.index}` : `0${item.index}`) : item.index
+      item.imgUrl = pokemonImg[item.no]
+      return item
     })
     this.setData({
-      list: data.pokemons
+      loading: false,
+      renderList: data.slice(0, this.pageSize * 20)
     })
+    this.list = data
+  },
+
+  loadMore() {
+    this.setData({
+      renderList: this.list.slice(0, this.pageSize * 20)
+    })
+  },
+
+  navToDetail(e) {
+    const { name = '妙蛙种子' } = e.currentTarget.dataset
+    console.log('pokemon name', name)
+    wx.navigateTo({
+      url: `/pages/pokemonDetail/pokemonDetail?name=${name}`,
+    });
   }
 })

@@ -1,13 +1,14 @@
 {
     "pages": [
+        "pages/home/home",
         "pages/index/index",
         "pages/logs/logs",
-        "pages/home/home"
+        "pages/pokemonDetail/pokemonDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
+        "navigationBarBackgroundColor": "#FFE57A",
+        "navigationBarTitleText": "精灵图鉴",
         "navigationBarTextStyle": "black"
     },
     "style": "v2",

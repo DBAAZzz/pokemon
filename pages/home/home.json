@@ -1,3 +1,7 @@
 {
-    "usingComponents": {}
+    "usingComponents": {
+        "pokemonType": "../../components/pokemon-type/index",
+        "lazyImage": "../../components/lazy-image/index"
+    },
+    "navigationBarBackgroundColor": "#FFE57A"
 }
