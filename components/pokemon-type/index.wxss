@@ -1,79 +1,157 @@
 .pokemon-type {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 96rpx;
   height: 48rpx;
   margin-left: 16rpx;
+  padding: 0 16rpx;
   border-radius: 24rpx;
   color: #fff;
   font-size: 24rpx;
+}
+
+.pokemon-type .logo{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 6rpx;
+  background-color: red;
+  background: url(http://175.178.74.222:9001/images/MST_20px.png) no-repeat; 
+  background-size: 40rpx 804rpx;
 }
 
 .hot {
   background-color: #e2041b;
 }
 
+.logo-hot {
+  background-position: 0 -120rpx !important;
+}
+
 .grass {
   background-color: #98d98e;
+}
+
+.logo-grass {
+  background-position: 0 -40rpx !important;
 }
 
 .poison {
   background-color: #7058a3;
 }
 
+.logo-poison {
+  background-position: 0 -600rpx !important;
+}
+
 .fly {
   background-color: #a0d8ef;
+}
+
+.logo-fly {
+  background-position: 0 -200rpx !important;
 }
 
 .water {
   background-color: #38a1db;
 }
 
+.logo-water {
+  background-position: 0 -80rpx !important;
+}
+
 .dragon {
   background-color: #4a488e;
+}
+
+.logo-dragon {
+  background-position: 0 -240rpx !important;
 }
 
 .insect {
   background-color: #c3d825;
 }
 
+.logo-insect {
+  background-position: 0 -160rpx !important;
+}
+
 .common {
   background-color: #d2d2d2;
+}
+
+.logo-common {
+  background-position: 0 -440rpx !important;
 }
 
 .evil {
   background-color: #8d6449;
 }
 
+.logo-evil {
+  background-position: 0 -680rpx !important;
+}
+
 .light {
   background-color: #ebd842;
+}
+
+.logo-light {
+  background-position: 0 0 !important;
 }
 
 .ice {
   background-color: #007bbb;
 }
 
+.logo-ice {
+  background-position: 0 -360rpx !important;
+}
+
 .steel {
   background-color: #7b7c7d;
+}
+
+.logo-steel {
+  background-position: 0 -320rpx !important;
 }
 
 .spirit {
   background-color: #eebbcb;
 }
 
+.logo-spirit {
+  background-position: 0 -400rpx !important;
+}
+
 .rock {
   background-color: #c39143;
+}
+
+.logo-rock {
+  background-position: 0 -520rpx !important;
 }
 
 .ground {
   background-color: #bfa46f;
 }
 
+.logo-ground {
+  background-position: 0 -480rpx !important;
+}
+
 .combat {
   background-color: #dc6900;
 }
 
+.logo-combat {
+  background-position: 0 -560rpx !important;
+}
+
 .superpowers {
   background-color: #e95295;
+}
+
+.logo-superpowers {
+  background-position: 0 -280rpx !important;
 }

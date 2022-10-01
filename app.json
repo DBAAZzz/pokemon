@@ -1,16 +1,34 @@
 {
-    "pages": [
-        "pages/home/home",
-        "pages/index/index",
-        "pages/pokemonDetail/pokemonDetail"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#FFE57A",
-        "navigationBarTitleText": "精灵图鉴",
-        "navigationBarTextStyle": "black"
-    },
-    "style": "v2",
-    "sitemapLocation": "sitemap.json",
-    "lazyCodeLoading": "requiredComponents"
+  "pages": [
+    "pages/home/home",
+    "pages/more/more",
+    "pages/index/index",
+    "pages/pokemonDetail/pokemonDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFE57A",
+    "navigationBarTitleText": "精灵图鉴",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#FFE57A",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "图鉴",
+        "iconPath": "assets/images/home_2.png",
+        "selectedIconPath": "assets/images/home_1.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "更多",
+        "iconPath": "assets/images/more_2.png",
+        "selectedIconPath": "assets/images/more_1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

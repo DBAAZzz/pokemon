@@ -40,6 +40,12 @@
           "pathName": "pages/home/home",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "more",
+          "pathName": "pages/more/more",
+          "query": "",
+          "scene": null
         }
       ]
     }

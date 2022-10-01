@@ -44,30 +44,57 @@
       <view class="stock-title" >种族值 {{pokemonDetail.baseStat.total}}</view>
       <view class="stock-box" >
         <view class="stock-item">
-          <view class="stock-item-value stock-item-hp" style="height:{{pokemonDetail.baseStat.hp / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-hp" style="height:{{pokemonDetail.baseStat.hp / 255 * 300}}rpx;">
+            {{pokemonDetail.baseStat.hp}}
+          </view>
           <view class="stock-item-label">HP</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value stock-item-attack" style="height:{{pokemonDetail.baseStat.attack / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-attack" style="height:{{pokemonDetail.baseStat.attack / 255 * 300}}rpx;">
+            {{pokemonDetail.baseStat.attack}}
+          </view>
           <view class="stock-item-label">攻击</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value stock-item-defense" style="height:{{pokemonDetail.baseStat.defense / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-defense" style="height:{{pokemonDetail.baseStat.defense / 255 * 300}}rpx;">
+            {{pokemonDetail.baseStat.defense}}
+          </view>
           <view class="stock-item-label">防御</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value stock-item-spAttack" style="height:{{pokemonDetail.baseStat.spAttack / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-spAttack" style="height:{{pokemonDetail.baseStat.spAttack / 255 * 300}}rpx;">
+            {{pokemonDetail.baseStat.spAttack}}
+          </view>
           <view class="stock-item-label">特攻</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value stock-item-spDefense" style="height:{{pokemonDetail.baseStat.spDefense / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-spDefense" style="height:{{pokemonDetail.baseStat.spDefense / 255 * 300}}rpx;">
+            {{pokemonDetail.baseStat.spDefense}}
+          </view>
           <view class="stock-item-label">特防</view>
         </view>
         <view class="stock-item">
-          <view class="stock-item-value stock-item-speed" style="height:{{pokemonDetail.baseStat.speed / 255 * 300}}rpx;"></view>
+          <view class="stock-item-value stock-item-speed" style="height:{{pokemonDetail.baseStat.speed / 255 * 300}}rpx;">
+            {{pokemonDetail.baseStat.speed}}
+          </view>
           <view class="stock-item-label">速度</view>
         </view>
       </view>
+    </view>
+    <view class="detail-ability">
+      <view class="detail-ability-title">特性</view>
+      <view class="ability-content-loading" wx:if="{{abilityLoading}}">
+        <image class="loading" src="../../assets/images/loading.gif" />
+      </view>
+      <view class="detail-ability-content" wx:else>
+        <view class="content-item" wx:for="{{abilityDetail}}">
+          <view class="ability-name">{{item.nameZh}}</view>
+          <view class="ability-desc">
+            <p>{{item.detail.desc}}</p>
+          </view>
+        </view>
+      </view>
+      
     </view>
   </view>
 </view>

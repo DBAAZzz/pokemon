@@ -25,4 +25,7 @@
     getClassName : getClassName,
   }
 </wxs>
-<view class="pokemon-type {{util.getClassName(typeName)}}">{{typeName}}</view>
+<view class="pokemon-type {{util.getClassName(typeName)}}">
+  <span class="logo logo-{{util.getClassName(typeName)}}"></span>
+  <span>{{typeName}}</span>
+</view>

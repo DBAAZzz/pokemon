@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pokemonDetail: {}
+    pokemonDetail: {},
+    abilityLoading: true,
+    abilityDetail: []
   },
   name: '',
 
@@ -75,6 +77,47 @@ Page({
     data[0].nameEn = data[0].nameEn.toLowerCase()
     this.setData({
       pokemonDetail: data[0]
+    })
+    this.getAbilityDetail()
+  },
+
+
+
+  async getAbilityDetail() {
+    let requestArr = []
+    if(this.data.pokemonDetail.ability1) {
+      requestArr.push(
+        get('https://pokemon.fantasticmao.cn/ability/detail', {
+          nameZh: this.data.pokemonDetail.ability1
+        })
+      )
+    }
+    if(this.data.pokemonDetail.ability2) {
+      requestArr.push(
+        get('https://pokemon.fantasticmao.cn/ability/detail', {
+          nameZh: this.data.pokemonDetail.ability2
+        })
+      )
+    }
+    if(this.data.pokemonDetail.abilityHide) {
+      requestArr.push(
+        get('https://pokemon.fantasticmao.cn/ability/detail', {
+          nameZh: this.data.pokemonDetail.abilityHide
+        })
+      )
+    }
+    let data = await Promise.all(requestArr)
+    let abilityRes = []
+    for(let i = 0; i < data.length; i++ ) {
+      abilityRes[i] = {
+        nameZh: data[i].data[0].nameZh,
+        id: data[i].data[0].id,
+        detail: data[i].data[0].detail,
+      } 
+    }
+    this.setData({
+      abilityLoading: false,
+      abilityDetail: abilityRes
     })
   }
 })

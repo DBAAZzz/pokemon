@@ -3,6 +3,7 @@
   box-sizing: border-box;
   min-height: 100vh;
   padding-top: 180rpx;
+  padding-bottom: 80rpx;
 }
 
 .hot {
@@ -129,7 +130,7 @@
   display: block;
   box-sizing: border-box;
   width: 690rpx;
-  margin: 16rpx auto 0 auto;
+  margin: 24rpx auto 0 auto;
   padding: 32rpx 32rpx 80rpx 32rpx;
   background-color: #fff;
   border-radius: 32rpx;
@@ -158,10 +159,15 @@
 }
 
 .stock-item .stock-item-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 0;
   box-shadow: 0px 0px 10px 1px rgb(179 234 254 / 40%);
   transition: all .5s;
+  font-size: 24rpx;
+  color: #fff;
 }
 
 .stock-item .stock-item-hp {
@@ -191,6 +197,65 @@
 .stock-item .stock-item-label {
   position: absolute;
   bottom: -48rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.detail-ability {
+  display: block;
+  box-sizing: border-box;
+  width: 690rpx;
+  margin: 24rpx auto 0 auto;
+  padding: 32rpx;
+  background-color: #fff;
+  border-radius: 32rpx;
+}
+
+.detail-ability .detail-ability-title {
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.detail-ability .detail-ability-content {
+  display: block;
+  margin-top: 20rpx;
+  transition: all 0.5s;
+}
+
+.detail-ability .ability-content-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200rpx;
+}
+
+.ability-content-loading .loading {
+  display: block;
+  width: 200rpx;
+  height: 96rpx;
+}
+
+.detail-ability-content .content-item {
+  margin-bottom: 24rpx;
+}
+
+.detail-ability-content .content-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-ability-content .content-item .ability-name {
+  font-weight: bold;
+}
+
+.ability-name .hide-text {
+  display: inline-block;
+  margin-left: 10rpx;
+  font-weight: normal;
+  font-size: 24rpx;
+}
+
+.detail-ability-content .content-item .ability-desc {
+  margin-top: 8rpx;
   font-size: 28rpx;
   color: #333;
 }
